@@ -1,4 +1,7 @@
 
+# Overview
+Takehome project for autodesk
+
 # Prerequists
 
 - Docker v20.10.6 see [here](https://docs.docker.com/get-docker/) for instalation instructions
@@ -7,11 +10,17 @@
 
 # How to use
 
-## Bring up server
+Note: These instructions might implictly assume that you have nothing running on ports thats would conflict. Might be wise to run the commands with all other docker containers stopped.
+
+## Bring up Server
+
  In order to bring up the server you have to first build the docker image using:
+
 ```bash
 docker build --tag autodesk:dev . 
 ```
+
+
 Which will build a docker image with the tag autodesk:dev which we can reference later.
 
 After the image is built bring up the server with the command:
@@ -66,3 +75,6 @@ docker compose up
 Will execute through docker compose to bring up the flask app and run tests againist it.
 
 Note: will also work with sperate docker-compose application
+
+#### Debuging 
+If `: Bind for 0.0.0.0:5000 failed: port is already allocated` error appears when running the tests probably means that you have a previous running 

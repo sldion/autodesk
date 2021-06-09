@@ -7,3 +7,5 @@ services:
     command: python -m pytest
     volumes:
       - ./:/app
+    # environment:
+    #   DEBUG_MODE
