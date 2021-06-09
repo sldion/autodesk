@@ -14,5 +14,14 @@ def hello_world():
         return "<p>Hello, World!</p>"
 
 
+@app.post("/")
+def hello_world_post():
+    app.logger.debug(f"request url: {request.url}")
+    if "application/json" in request.headers["Accept"]:
+        return {"message": "Hello, World!"}
+    else:
+        return "<p>Hello, World!</p>"
+
+
 if __name__ == "__main__":
     app.run()
